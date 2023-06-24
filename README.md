@@ -1,6 +1,6 @@
 ## Stories_Blog
 
-View demo https://pamila10.github.io/Stories_Blog
+View demo https://main--elegant-kheer-1b0375.netlify.app/
 
 ## Setup
 
