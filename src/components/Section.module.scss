@@ -1,0 +1,18 @@
+.Section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  &_h2 {
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    margin-bottom: 25px;
+    font-weight: 700;
+
+    span {
+      display: inline-block;
+      border-bottom: 1px solid rgba(0,0,0,.44);
+      padding-bottom: 20px;
+      margin-bottom: -1px;
+    }
+  }
+}

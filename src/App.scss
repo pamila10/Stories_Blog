@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import './styles/mixins.scss';
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s;
+
+  &:hover {
+    transition: all 0.2s;
+  }
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 0.95rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  text-align: center;
+}
+
+.App {
+  font-family: 'Open Sans', Arial,sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--primary-text-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.25rem;
+  font-size: 1.10rem;
+  line-height: 1;
+  background: 0 0;
+  border: 1px solid transparent;
+
+  &___def {
+    border: 1px solid var(--primary-border-color);
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 2px;
+    color: var(--primary-text-color);
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+  }
+
+  &___submit {
+    max-width: 170px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: #656565;
+    color: white;
+    font-size: 16px;
+    padding: 8px;
+
+    &:hover {
+      background-color: #494949;
+    }
+
+    &:active {
+      background-color: #585858;
+    }
+  }
+}
+
+.img {
+  vertical-align: middle;
+  border-style: none;
+
+  &___fluid {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.link {
+  color: initial;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &___dark {
+    color: var(--third-text-color);
+  }
+}
+
+.title {
+  padding: 20px 0 10px;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+  text-align: start;
+
+  @include devices(mobile) {
+    width: 540px;
+  }
+
+  @include devices(tablet) {
+    width: 720px;
+  }
+
+  @include devices(laptop) {
+    width: 960px;
+  }
+
+  @include devices(laptopXL) {
+    width: 1140px;
+  }
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+
+  &___h100 {
+    min-height: 100%;
+  }
+
+  &___page {
+    height: 100%;
+  }
+}
+
+.column {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.25rem;
+
+  @include devices(mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include devices(tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.Main {
+  display: flex;
+  flex: 1 0 auto;
+  height: 100%;
+  margin-top: 61px;
+  background-color: var(--secondary-bg);
+
+  @include devices(laptop) {
+    margin-top: 82px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.navLink {
+  display: block;
+  padding: 0.5em 1em;
+
+  &.active {
+    color: rgba(0,0,0,.9);
+  }
+}
+
+.Pagination {
+  margin: 30px auto 10px;
+  
+  &_list{
+    display: inline-flex;
+    list-style-type: none;
+  }
+  
+  li {
+    padding: 5px;
+    border: 1px solid black;
+    min-width: 30px;
+    text-align: center;
+
+    &.active {
+      background-color: white;
+    }
+  }
+}
+
+.Loader {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+  background: var(--secondary-bg);
+
+  &_spinner {
+    width: 64px;
+    height: 64px;
+    border: 8px solid;
+    border-color: #3d5af1 transparent #3d5af1 transparent;
+    border-radius: 50%;
+    animation: spin-anim 1.2s linear infinite;
+  }
+}
+
+@keyframes spin-anim {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+
+  &_fieldWrap {
+    display: flex;
+    flex-direction: column;
+
+    @include devices (tablet) {
+      align-items: center;
+      flex-direction: row;
+      margin-bottom: 20px;
+    }
+  }
+
+  &_label {
+    padding: 15px 0;
+
+    @include devices (tablet) {
+      width: 200px;
+      padding: 0;
+    }
+  }
+
+  &_field {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 14px;
+    font-family: 'Open Sans', Arial,sans-serif;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0px 0px 2px;
+    }
+
+    &___textarea {
+      width: 100% !important;
+      height: 150px;
+    }
+  }
+
+  &_submitBtn {
+    margin: 20px 0 10px;
+  }
+}

@@ -1,0 +1,14 @@
+.Footer {
+  font-size: 0.8rem;
+  color: var(--secondary-text-color);
+  background-color: var(--secondary-bg);
+
+  &_wrap {
+    padding: 15px;
+    border-top: 1px solid rgba(0,0,0,.05)!important;
+  }
+
+  &_copy {
+    text-align: center;
+  }
+}

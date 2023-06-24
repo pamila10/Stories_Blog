@@ -1,0 +1,41 @@
+.Card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 4px;
+
+  &_block {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+  }
+
+  &_title {
+    font-weight: 700;
+    line-height: 1.25;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    a {
+      color: var(--third-text-color);
+    }
+  }
+
+  &_text {
+    color: rgba(0,0,0,.44);
+    line-height: 1.4;
+    font-weight: 400;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+}

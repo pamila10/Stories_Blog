@@ -1,0 +1,7 @@
+@import './../styles/mixins.scss';
+
+.NewPost {
+  &_title {
+    padding: 20px 0 10px;
+  }
+}

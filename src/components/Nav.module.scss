@@ -1,0 +1,130 @@
+@import './../styles/mixins.scss';
+@import './../styles/vars.scss';
+
+.Nav {
+  display: flex;
+  flex: 0 0 auto;
+  height: var(--nav-height-sm);
+  padding: 0.5rem 1rem;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  background: var(--primary-bg);
+  box-shadow: var(--primary-box-shadow);
+
+  @include devices(laptop) {
+    height: var(--nav-height);
+  }
+
+  &_container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_brand {
+    display: inline-block;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    font-weight: 500;
+    color: rgba(0,0,0,.9);
+  }
+
+  &_collapseWrap {
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 300px;
+    padding: 30px;
+    background-color: var(--third-bg);
+    z-index: 1000;
+    transform: translateX(300px);
+    transition: transform 0.3s ease;
+    box-shadow: var(--secondary-box-shadow);
+
+    @include devices(laptop) {
+      width: auto;
+      height: 100%;
+      padding: 0;
+      z-index: 0;
+      position: static;
+      justify-content: flex-end;
+      flex-direction: row;
+      transform: none;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  &_closeIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    @include devices(laptop) {
+      display: none;
+    }
+  }
+
+  &_navigation {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 0;
+
+    @include devices(laptop) {
+      flex-direction: row;
+      padding: 0;
+      order: 2;
+    }
+  }
+
+  &_item {
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: start;
+  }
+
+  &_link {
+    padding-right: 0;
+    padding-left: 0;
+    text-decoration: none;
+    color: rgba(0,0,0,.5);
+
+    @include devices(laptop) {
+      padding-right: 0.7rem;
+      padding-left: 0.7rem;
+    }
+  }
+
+  &_toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    border-radius: 0.25rem;
+    border-color: var(--primary-border-color);
+
+    @include devices(laptop) {
+      display: none;
+    }
+  }
+}

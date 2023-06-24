@@ -1,0 +1,50 @@
+@import './../styles/mixins.scss';
+
+.AuthorPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  @include devices(tablet) {
+    flex-direction: row;
+  }
+
+  &_wrap {
+    display: flex;
+    margin: 1rem auto;
+    text-align: center;
+
+    @include devices(tablet) {
+      max-width: 83%;
+    }
+
+    &___sm {
+      @include devices(tablet) {
+        max-width: 17%;
+      }
+    }
+  }
+
+  &_titleBl {
+    padding: 2rem 0 0;
+  }
+
+  &_title {
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  i {
+    padding: 1rem 0;
+  }
+
+  img {
+    width: 120px;
+  }
+
+  &_text {
+    font-size: 1rem;
+    color: rgba(0,0,0,.6);
+  }
+}

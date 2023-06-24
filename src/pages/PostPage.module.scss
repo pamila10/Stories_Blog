@@ -1,0 +1,61 @@
+@import './../styles/mixins.scss';
+
+.PostPage {
+
+  &_wrap {
+    display: flex;
+    margin: 1rem auto 3rem;
+
+    @include devices(tablet) {
+      max-width: 68%;
+    }
+  }
+}
+
+.Article {
+
+  &_author {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &_authorAddress {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: end;
+  }
+
+  &_titleBl {
+    padding: 1rem 0;
+  }
+
+  &_title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &_text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(0,0,0,.8);
+    text-align: justify;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  button {
+    margin-right: 10px;
+  }
+
+  img {
+    max-height: 340px;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+  }
+}
