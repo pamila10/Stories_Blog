@@ -53,7 +53,7 @@ const Post = ({ posts, postsImg, deletePost }) => {
               <>
                 <h2>Post Not Found</h2>
                 <p>
-                  <Link to='/Stories_Blog'>Visit Our Homepage</Link>
+                  <Link to='/'>Visit Our Homepage</Link>
                 </p>
               </>
             )}
